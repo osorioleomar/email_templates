@@ -1,0 +1,86 @@
+Email Template CheatSheet
+----------------------------
+
+Important Rules:
+- If an attribute exists in HTML, use that instead of CSS.
+- Use padding on TD tags but not on P tags or DIVs. They behave a lot more unpredictably.
+
+
+---------- Schema:
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Demystifying Email Design</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+</html>
+
+------------ Creating the body
+
+<!-- start of the body -->
+<body style="margin: 0; padding: 0;">
+	<!-- wrapping the contents with table instead of div. Width should be 100%. Set padding and spacing to 0 to reduce unpredictability -->
+	<table cellpadding="0" cellspacing="0" width="100%" bgcolor="#D8E6E7">
+		<tr>
+			<td>
+				<!-- centered container table -->
+				<table align="center" cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse;" bgcolor="#FFFFFF">
+					<tr>
+						<td>
+							
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</body>
+
+------------- Using Padding
+
+Safe: Adding the padding using shothand clockwise notation
+	padding: 10px 10px 8px 5px;
+
+Safer: Using the longform
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 8px;
+	padding-left: 5px;
+
+Safest: Using empty cells. Perfect if your client is stripping off CSS
+	<tr><td style="font-size: 0; line-height: 0;padding: 20px 0 20px 0">&nbsp;</td></tr> //best to use the padding because Outlook doesn't render &nbsp;
+
+Table:
+Main: <table border="1" cellpadding="0" cellspacing="0" width="100%" bgcolor="#D8E6E7">
+
+Padding for Cell:   
+<td style="font-size: 0; line-height: 0;" width="20">
+  &nbsp;
+</td>
+
+<p style="color: #072735; font-family: Arial, sans-serif; font-size: 14px;line-height: 1.6;">
+
+Button:
+						<td style="padding:40px 30px 0 30px">
+							<p style="color: #072735; font-family: Arial, sans-serif; font-size: 14px;">Dear Phoebe,</p>
+							<br>
+							<p style="color: #072735; font-family: Arial, sans-serif; font-size: 14px;line-height: 1.6;">Thank you for signing up a new account in AnnualReportPromotion.com. <br>
+							To protect your account, we need to verify your email address first.</p>
+						</td>
+
+
+Creating Horizontal Lines
+
+
+										<table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #BBBBBB;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+										    <tr style="vertical-align: top">
+										        <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+										        	<span>&#160;</span>
+										        </td>
+										    </tr>
+										</table>
+
+
+
